@@ -9,6 +9,7 @@ public partial class PipeManager : Node
 	private List<Pipes> _pipeList = new List<Pipes>();
 	private float _distanceBetweenPipes = 200;
 	private Random _random = new();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -26,19 +27,22 @@ public partial class PipeManager : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
+		//move each pipe in the list
 		foreach(Pipes item in _pipeList)
 		{
 			item.Move();
 		}
 		
-		if(_pipeList[0].GetCurrentPos().X < 0)
+		//Remove pipes after the leave the screen
+		if(_pipeList[0].GetCurrentPos().X < -50)
 		{
+			RemoveChild(_pipeList[0]);
 			RemovePipe(0);
 			AddPipe();
 		}
 	}
 
+	//adds enough pipes to fill the screen
 	public void PopulatePipes()
 	{
 		for(int i = 0; i < 10; i++)
@@ -71,5 +75,22 @@ public partial class PipeManager : Node
 	public List<Pipes> GetPipes()
 	{
 		return _pipeList;
+	}
+
+	//Stops all pipes to pause the game
+	public void Pause()
+	{
+		foreach(Pipes item in _pipeList)
+		{
+			item.SetSpeed(0);
+		}
+	}
+
+	public void Resume()
+	{
+		foreach(Pipes item in _pipeList)
+		{
+			item.SetSpeed(1);
+		}
 	}
 }

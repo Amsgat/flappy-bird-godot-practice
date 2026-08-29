@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://bc41xowkmerv5"]
 
 [ext_resource type="Script" uid="uid://kxqgvqyb0t4e" path="res://Scripts/Main.cs" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cknl8q818171t" path="res://Scenes/flappy.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://1dilwcar8syh" path="res://Scenes/pipes.tscn" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=352446340]
 script = ExtResource("1_jjgbg")
-_pipeSpawner = ExtResource("2_bo1nx")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=292228188]
+size = Vector2i(291, 512)
+
+[node name="Flappy" parent="." unique_id=1893534991 instance=ExtResource("2_8gbba")]
+position = Vector2(71, 62)
 
 [node name="Pipes" parent="." unique_id=803050973 instance=ExtResource("2_bo1nx")]
 visible = false

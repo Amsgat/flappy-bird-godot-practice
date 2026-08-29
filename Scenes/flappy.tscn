@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cknl8q818171t"]
+
+[ext_resource type="Script" uid="uid://b0kdfkrl58hwf" path="res://Scripts/Flappy.cs" id="1_ahiyn"]
+[ext_resource type="Texture2D" uid="uid://cji8bidw26v6" path="res://Sprites/redbird-midflap.png" id="1_re86i"]
+[ext_resource type="Texture2D" uid="uid://d0agxdxgm5ilb" path="res://Sprites/redbird-upflap.png" id="2_5vn6a"]
+[ext_resource type="Texture2D" uid="uid://dcmjxotvmds48" path="res://Sprites/redbird-downflap.png" id="3_o0afa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_st70h"]
+radius = 12.165525
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ophcw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_re86i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5vn6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_re86i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o0afa")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Flappy" type="CharacterBody2D" unique_id=1893534991]
+script = ExtResource("1_ahiyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74468184]
+shape = SubResource("CircleShape2D_st70h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=431199526]
+sprite_frames = SubResource("SpriteFrames_ophcw")
