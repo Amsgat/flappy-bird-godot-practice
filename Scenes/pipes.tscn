@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1dilwcar8syh"]
+
+[ext_resource type="Script" uid="uid://bt82y6n838m8u" path="res://Scripts/Pipes.cs" id="1_7ktcp"]
+[ext_resource type="PackedScene" uid="uid://b1kgy2ulgpcyq" path="res://Scenes/pipe.tscn" id="1_uhra5"]
+
+[node name="Pipes" type="Node2D" unique_id=803050973]
+script = ExtResource("1_7ktcp")
+
+[node name="Pipe" parent="." unique_id=1965909005 instance=ExtResource("1_uhra5")]
+position = Vector2(0, 532)
+
+[node name="Pipe2" parent="." unique_id=1299332185 instance=ExtResource("1_uhra5")]
+position = Vector2(0, 86)
+scale = Vector2(1, -1)
