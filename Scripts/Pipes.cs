@@ -56,7 +56,7 @@ public partial class Pipes : Node2D
 	public void SetPositionY(float y)
 	{
 		_currentPos.Y = y;
-		float randomHeight = _random.Next(100);
+		float randomHeight = _random.Next(-200,0);
 		_pipe.Position = new Vector2(_pipe.Position.X, _pipe.Position.Y + randomHeight);
 		_pipe2.Position = new Vector2(_pipe2.Position.X, _pipe2.Position.Y + randomHeight);
 	}

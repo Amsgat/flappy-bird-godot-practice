@@ -3,9 +3,19 @@
 [ext_resource type="Script" uid="uid://kxqgvqyb0t4e" path="res://Scripts/Main.cs" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cknl8q818171t" path="res://Scenes/flappy.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://1dilwcar8syh" path="res://Scenes/pipes.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://e02eqm7croop" path="res://Scenes/ground.tscn" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://cd2e00st77csk" path="res://Sprites/background-night.png" id="5_kry3j"]
 
 [node name="Main" type="Node2D" unique_id=352446340]
 script = ExtResource("1_jjgbg")
+
+[node name="Score" type="Label" parent="." unique_id=955835261]
+visibility_layer = 2
+z_index = 1
+offset_left = 94.0
+offset_top = 15.0
+offset_right = 177.0
+offset_bottom = 48.0
 
 [node name="Flappy" parent="." unique_id=1893534991 instance=ExtResource("2_8gbba")]
 position = Vector2(71, 62)
@@ -13,8 +23,12 @@ position = Vector2(71, 62)
 [node name="Pipes" parent="." unique_id=803050973 instance=ExtResource("2_bo1nx")]
 visible = false
 
-[node name="Score" type="Label" parent="." unique_id=955835261]
-offset_left = 473.0
-offset_top = 14.0
-offset_right = 595.0
-offset_bottom = 49.0
+[node name="Ground" parent="." unique_id=1572572706 instance=ExtResource("4_jjvhh")]
+z_index = 1
+position = Vector2(-24, 79)
+
+[node name="BackgroundNight" type="Sprite2D" parent="." unique_id=1054166341]
+z_index = -1
+position = Vector2(301.49997, 248.49998)
+scale = Vector2(2.09375, 0.97070307)
+texture = ExtResource("5_kry3j")

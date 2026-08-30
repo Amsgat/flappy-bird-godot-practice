@@ -61,7 +61,7 @@ public partial class PipeManager : Node
 		newPipe.SetPositionX(lastPos + _distanceBetweenPipes);
 
 		//set Y position of new pipe randomly
-		float randomYPos = _random.Next(-100,100);
+		float randomYPos = _random.Next(2000);
 		newPipe.SetPositionY(randomYPos);
 
 		_pipeList.Add(newPipe);
