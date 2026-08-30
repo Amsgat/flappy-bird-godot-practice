@@ -3,6 +3,7 @@ using System;
 
 public partial class Pipe : Area2D
 {
+	private bool _collisionFlag = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -13,5 +14,15 @@ public partial class Pipe : Area2D
 	public override void _Process(double delta)
 	{
 		
+	}
+
+	public void _on_body_entered(Node2D body)
+	{
+		_collisionFlag = true;
+	}
+
+	public bool GetCollisionFlag()
+	{
+		return _collisionFlag;
 	}
 }

@@ -8,21 +8,26 @@ public partial class Pipes : Node2D
 	private Vector2 _direction = new Vector2(-1,0);
 	private Vector2 _startPos = new Vector2(500,0);
 	private Vector2 _currentPos;
-	private Area2D _pipe;
-	private Area2D _pipe2;
+	private Pipe _pipe;
+	private Pipe _pipe2;
 	private Random _random = new Random();
-	
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_pipe = GetNode<Area2D>("Pipe");
-		_pipe2 = GetNode<Area2D>("Pipe2");
+		_pipe = GetNode<Pipe>("Pipe");
+		_pipe2 = GetNode<Pipe>("Pipe2");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		
+	}
+
+	public Pipe[] GetPipes()
+	{
+		return [_pipe,_pipe2];
 	}
 
 	public void SetSpeed(float speed)

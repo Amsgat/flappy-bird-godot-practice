@@ -93,4 +93,27 @@ public partial class PipeManager : Node
 			item.SetSpeed(1);
 		}
 	}
+
+	public void EndGame()
+	{
+		Pause();
+	}
+
+	public bool GetCollision()
+	{
+		foreach(Pipes item in _pipeList)
+		{
+			Pipe[] pipeArray = item.GetPipes();
+			foreach(Pipe pipe in pipeArray)
+			{
+				if(pipe.GetCollisionFlag())
+				{
+					return true;
+				}
+
+			}
+		}
+
+		return false;
+	}
 }
