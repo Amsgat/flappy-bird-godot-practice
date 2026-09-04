@@ -18,7 +18,9 @@ public partial class Pipe : Area2D
 
 	public void _on_body_entered(Node2D body)
 	{
-		_collisionFlag = true;
+		if(body is Flappy flappy) {
+			_collisionFlag = true;
+		}
 	}
 
 	public bool GetCollisionFlag()

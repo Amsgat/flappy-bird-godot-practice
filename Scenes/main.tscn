@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://1dilwcar8syh" path="res://Scenes/pipes.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://e02eqm7croop" path="res://Scenes/ground.tscn" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://cd2e00st77csk" path="res://Sprites/background-night.png" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bru3tituavdov" path="res://Scenes/game_over.tscn" id="6_21xkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
+size = Vector2(53, 20)
 
 [node name="Main" type="Node2D" unique_id=352446340]
 script = ExtResource("1_jjgbg")
@@ -32,3 +36,13 @@ z_index = -1
 position = Vector2(301.49997, 248.49998)
 scale = Vector2(2.09375, 0.97070307)
 texture = ExtResource("5_kry3j")
+
+[node name="GameOver" parent="." unique_id=353717221 instance=ExtResource("6_21xkr")]
+position = Vector2(-173, 259)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=944398304]
+position = Vector2(68, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=973462560]
+position = Vector2(5.5, -10)
+shape = SubResource("RectangleShape2D_ostoq")

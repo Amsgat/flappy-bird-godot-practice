@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bru3tituavdov"]
+
+[ext_resource type="Texture2D" uid="uid://b3by8e5r6ncix" path="res://Sprites/gameover.png" id="1_y26ei"]
+
+[node name="GameOver" type="Sprite2D" unique_id=353717221]
+texture = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="." unique_id=1672754390]
+anchors_preset = -1
+anchor_left = 0.60400003
+anchor_top = 1.0480001
+anchor_right = 0.60400003
+anchor_bottom = 1.0480001
+offset_left = -191.968
+offset_top = -26.016003
+offset_right = -36.968002
+offset_bottom = -3.0160027
+text = "Press 'F' to continue"

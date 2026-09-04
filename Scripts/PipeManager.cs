@@ -96,7 +96,11 @@ public partial class PipeManager : Node
 
 	public void EndGame()
 	{
-		Pause();
+		foreach(Pipes item in _pipeList)
+		{
+			RemoveChild(item);
+			//_pipeList.Remove(item);
+		}
 	}
 
 	public bool GetCollision()
